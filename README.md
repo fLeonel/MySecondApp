@@ -1,6 +1,6 @@
-# yes_no_app
+# My Second App
 
-A new Flutter project.
+This is my second App development whit flutter and Dart( for backend ) im learn about how create apps for android and iOS..
 
 ## Getting Started
 
