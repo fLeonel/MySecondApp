@@ -11,19 +11,22 @@ class ChatScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        leading: const Padding(
-          padding: EdgeInsets.all(4.0),
-          child: CircleAvatar(
-            backgroundImage: NetworkImage(
-                'https://d28ku8nzmkcjr6.cloudfront.net/cache/2f/45/2f45b264d367ab76f050209a94cf30d1.webp'),
+    return SafeArea(
+      top: false,
+      child: Scaffold(
+        appBar: AppBar(
+          leading: const Padding(
+            padding: EdgeInsets.all(4.0),
+            child: CircleAvatar(
+              backgroundImage: NetworkImage(
+                  'https://d28ku8nzmkcjr6.cloudfront.net/cache/2f/45/2f45b264d367ab76f050209a94cf30d1.webp'),
+            ),
           ),
+          title: const Text('Jennifer Aniston'),
+          centerTitle: true,
         ),
-        title: const Text('Jennifer Aniston'),
-        centerTitle: true,
+        body: _ChatView(),
       ),
-      body: _ChatView(),
     );
   }
 }
