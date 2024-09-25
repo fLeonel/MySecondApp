@@ -13,12 +13,12 @@ class MessageFieldBox extends StatelessWidget {
         borderRadius: BorderRadius.circular(30));
 
     final inputDecoration = InputDecoration(
-      hintText: 'Type a message "??"',
+      hintText: 'Type a message "?"',
       enabledBorder: OutlineInputBorder,
       focusedBorder: OutlineInputBorder,
       filled: true,
       suffixIcon: IconButton(
-        icon: Icon(Icons.send_outlined),
+        icon: const Icon(Icons.send_outlined),
         onPressed: () {
           final textValue = textController.value.text;
           print('button: $textValue');
