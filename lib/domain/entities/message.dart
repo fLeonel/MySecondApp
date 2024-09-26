@@ -1,5 +1,5 @@
 //? Aprendiendo la logica de los mensajes con DART.
-//estamos aprendiendo de los estados   
+//* Estamos aprendiendo de los estados
 
 enum FromWho { me, hers }
 
