@@ -1,13 +1,42 @@
-//* Clase de YES_NO / trabajando con apis.
+//?Esta es data que no ocupamos, por que lo genera la extension de PastJson - no lo voy a borrar para fines de aprendizaje.
+// To parse this JSON data, do
+//
+//     final yesNoModel = yesNoModelFromJson(jsonString);
+
+// import 'dart:convert';
+
+// YesNoModel yesNoModelFromJson(String str) => YesNoModel.fromJsonMap(json.decode(str));
+
+// String yesNoModelToJson(YesNoModel data) => json.encode(data.toJson());
+
+import 'package:yes_no_app/domain/entities/message.dart';
 
 class YesNoModel {
-  String answer;
-  bool forced;
-  String image;
+  final String answer;
+  final bool forced;
+  final String image;
 
-  YesNoModel({required this.answer, required this.forced, required this.image});
+  YesNoModel({
+    required this.answer,
+    required this.forced,
+    required this.image,
+  });
 
-  //el factory es para crear una nueva instancia.
   factory YesNoModel.fromJsonMap(Map<String, dynamic> json) => YesNoModel(
-      answer: json['anwer'], forced: json['forced'], image: json['image']);
+        answer: json["answer"],
+        forced: json["forced"],
+        image: json["image"],
+      );
+
+  //-> esto no lo ocupamos por ahora.
+  Map<String, dynamic> toJson() => {
+        "answer": answer,
+        "forced": forced,
+        "image": image,
+      };
+
+  Message toMessageEntity() => Message(
+      text: answer == 'yes' ? 'Simon krnal' : 'Vete pero alv',
+      fromWho: FromWho.hers,
+      imageURL: image);
 }
